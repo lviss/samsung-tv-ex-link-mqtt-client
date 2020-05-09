@@ -1,0 +1,13 @@
+[Unit]
+Description=TV Service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/tv
+ExecStart=/home/pi/tv/mqtt
+Restart=always # or on-failure, on-abort, etc
+
+[Install]
+WantedBy=multi-user.target
